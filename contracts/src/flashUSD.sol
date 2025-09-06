@@ -23,10 +23,10 @@ contract FlashUSD is ERC20, ERC20Burnable, Ownable {
         require(to == address(0));
         if (block.timestamp > mintedTime[from] + 7 days) {
             uint256 balance = balanceOf(from);
-        }
             if (balance > 0) {
                 _burn(from, balance);
             }
         }
         super._beforeTokenTransfer(from, to, amount);
+   }
 }
