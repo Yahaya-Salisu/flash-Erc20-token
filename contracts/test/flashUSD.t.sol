@@ -8,7 +8,6 @@ import "../src/flashUSD.sol";
 contract flashUSD is flashUSD, Test {
     flashUSD public fUSD;
     address public owner;
-    address public newOwner;
     address public User1;
     address public User2;
 
