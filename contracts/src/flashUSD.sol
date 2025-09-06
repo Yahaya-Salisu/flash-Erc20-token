@@ -19,9 +19,9 @@ contract flashUSD is ERC20, ERC20Burnable, Ownable {
         mintedTime[to] = block.timestamp;
     }
 
-    function _beforetokenTransfer(address from, address to, uint256 amount) internal override {
+    function _beforeTokenTransfer(address from, address to, uint256 amount) internal override {
         require(to == address(0));
-        if (block.timestamp > mintedTime + 7 days) {
+        if (block.timestamp > mintedTime[from] + 7 days) {
             uint256 balance = balanceOf(from);
             if (balance > 0) {
                 _burn(from, balance);
