@@ -7,7 +7,7 @@ import {ERC20Burnable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC2
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /// @custom:security-contact yahayasalisu162@gmail.com
-contract FlashUSD is ERC20, ERC20Burnable, Ownable {
+contract flashUSD is ERC20, ERC20Burnable, Ownable {
     mapping(address => uint256) public mintedTime;
     constructor(address initialOwner)
         ERC20("flashUSD", "fUSD")
